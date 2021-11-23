@@ -1,0 +1,31 @@
+
+
+    <form nz-form [nzLayout]="'inline'" class="login-form" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <nz-input-group nzPrefixIcon="user">
+              <input formControlName="name" nz-input placeholder="Username" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item><br>
+        <nz-form-item>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-input-group nzPrefixIcon="user">
+                <input formControlName="price" nz-input placeholder="Username" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item><br>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-input-group nzPrefixIcon="user">
+                <input formControlName="qty" nz-input placeholder="Username" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item><br>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" [disabled]="!validateForm.valid">save</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+

@@ -1,0 +1,90 @@
+
+  <nz-layout>
+      <nz-sider nzCollapsible nzWidth="200px">
+        <div class="logo"></div>
+        <ul nz-menu nzTheme="dark" nzMode="inline">
+          <li nz-submenu routerLink="/product" nzTitle="Product" nzIcon="user">
+          </li>
+          <li nz-submenu nzTitle="promotion" nzIcon="promotion">
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout>
+        <nz-header></nz-header>
+        <nz-content>
+          <nz-breadcrumb>
+            <nz-breadcrumb-item>Retail</nz-breadcrumb-item>
+            <nz-breadcrumb-item>promotion</nz-breadcrumb-item>
+          </nz-breadcrumb>
+          <div class="inner-content">
+
+              
+
+              
+             
+              <div nz-row>
+                <div nz-col nzSpan="12">
+
+                  
+            <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+              <nz-form-item>
+                <nz-form-control nzErrorTip="Enter year">
+                  <nz-input-group nzPrefixIcon="user">
+                    <input formControlName="year" nz-input placeholder="year" />
+                  </nz-input-group>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-control nzErrorTip="Enter month">
+                  <nz-input-group nzPrefixIcon="lock">
+                    <input formControlName="month" nz-input placeholder="month" />
+                  </nz-input-group>
+                </nz-form-control>
+              </nz-form-item>
+
+              <nz-form-item>
+                  <nz-form-control>
+                      <a nz-dropdown [nzDropdownMenu]="menu">
+                          promotion 
+                          <i nz-icon nzType="down"></i>
+                      </a>
+                      <nz-dropdown-menu #menu="nzDropdownMenu">
+                          <ul nz-menu nzSelectable>
+                          <li nz-menu-item>15% and 20%</li>
+                          <li nz-menu-item nzDanger>25% and 30%</li>
+                          </ul>
+                      </nz-dropdown-menu>
+
+                  </nz-form-control>
+              </nz-form-item>
+
+              <nz-form-item>
+                <nz-form-control>
+                  <button nz-button nzType="primary" [disabled]="!validateForm.valid">Check</button>
+                </nz-form-control>
+              </nz-form-item>
+            </form>
+
+                </div>
+
+              </div>
+
+              <div nz-row>
+                <div nz-col nzSpan="12">
+                  <nz-card style="width:700px; margin: 10px;" nzTitle="promotion result">
+                    <ul>
+                      <li>15 % promotion profit: {{d1}} </li>
+                      <li>15 % promotion valubale days:  {{d2}}</li>
+                      <li>20 % promotion profit:  {{d3}}</li>
+                      <li>20 % promotion valubale days:  {{d4}}</li>
+                    </ul>
+                  </nz-card>
+                </div>
+                
+              </div>
+
+          </div>
+        </nz-content>
+        <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+      </nz-layout>
+    </nz-layout>
